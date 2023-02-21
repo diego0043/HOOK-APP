@@ -4,7 +4,9 @@ import ReactDOM from "react-dom/client";
 //import CounterWithCustomHook from './Components/useState/CounterWithCustomHook'
 //import SimpleForm from './Components/useEffect/SimpleForm'
 import "./body.css";
-import { MemoHook } from "./Components/memos/MemoHook";
+//import { CallBackHook } from "./Components/memos/CallBackHook";
+import { Padre } from "./Components/tarea-memo/Padre";
+//import { MemoHook } from "./Components/memos/MemoHook";
 //import { Memorize } from "./Components/memos/Memorize";
 //import { Layout } from "./Components/useLayoutEffect/Layout";
 //import { MultipleCustomHooks } from "./Components/examples/MultipleCustomHooks";
@@ -14,5 +16,5 @@ import { MemoHook } from "./Components/memos/MemoHook";
 //import CounterApp from './Components/useState/CounterApp'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <MemoHook />
+  <Padre />
 );
