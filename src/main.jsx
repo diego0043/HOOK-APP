@@ -14,7 +14,9 @@ import { Padre } from "./Components/tarea-memo/Padre";
 //import FormWithCustomHook from './Components/useEffect/FormWithCustomHook'
 
 //import CounterApp from './Components/useState/CounterApp'
+import './Components/useReducer/intro-reducer.js';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+/* ReactDOM.createRoot(document.getElementById("root")).render(
   <Padre />
 );
+ */
