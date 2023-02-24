@@ -1,41 +1,28 @@
-import { useReducer } from "react";
-import { CardTodo, FormAddTodo, todoReducer } from "./index.js";
-
-const initialState = [
-  {
-    id: new Date().getTime(),
-    desc: "Learn React",
-    done: false,
-  },
-  {
-    id: new Date().getTime(),
-    desc: "Learn Mongo",
-    done: false,
-  },
-  {
-    id: new Date().getTime(),
-    desc: "Learn Node",
-    done: false,
-  },
-];
+import { useTodo } from "../../hooks/useTodo.js";
+import { CardTodo, FormAddTodo } from "./index.js";
 
 export const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initialState);
-
-  const handleAddTodo = (newTodo) => {
-    console.log(newTodo);
-  };
+  const { todos, counter, countPending, handleAddTodo, handleDeleteTodo, handleFinalyTodo } =
+    useTodo();
 
   return (
     <>
       <h1 className="text-center mt-3 mb-3 font-bold ">TODO APP</h1>
+      <h2 className="text-center mt-3 mb-3 font-bold ">Task: {counter} - Pending: {countPending}</h2>
       <hr className="container" />
       <div>
         <FormAddTodo addTodo={handleAddTodo} />
       </div>
-      <ul className="text-center mt-4 flex justify-center container">
+      <ul className="text-center mt-4 flex justify-center container-fluid row">
         {todos.map((item, index) => {
-          return <CardTodo key={item.id * index} name={item.desc} />;
+          return (
+            <CardTodo
+              key={item.id * index}
+              item={item}
+              del={handleDeleteTodo}
+              finaly={handleFinalyTodo}
+            />
+          );
         })}
       </ul>
     </>
