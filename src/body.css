@@ -1,3 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.scroll-my{
+    overflow-y: scroll;
+
+}
+
+.scroll-my::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.scroll-my::-webkit-scrollbar-track {
+    background: white;
+}
